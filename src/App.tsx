@@ -1,24 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route } from 'react-router-dom';
+import Header from "./components/header";
+import Home from "./screens/home";
+import Tamanho from "./screens/pedido/tamanho";
+import Massa from "./screens/pedido/massa";
+import Sabores from "./screens/pedido/sabores";
+import Bebidas from "./screens/pedido/bebidas";
+import Finalizar from "./screens/pedido/finalizar";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Route exact path="/" component={Home} />
+      <Route exact path="/selecionar-tamanho" component={Tamanho} />
+      <Route exact path="/selecionar-massa" component={Massa} />
+      <Route exact path="/selecionar-sabores" component={Sabores} />
+      <Route exact path="/selecionar-bebidas" component={Bebidas} />
+      <Route exact path="/finalizar" component={Finalizar} />
     </div>
   );
 }
